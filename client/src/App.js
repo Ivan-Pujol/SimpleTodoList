@@ -28,8 +28,8 @@ export default function App() {
     } else {
       setIsEditing(false);
     }
-    // const URL = `https://backend-desafiofinal.herokuapp.com/api/transaction/gettransactions/${currentPeriod}`;
-    const URL = `http://localhost:3001/api/all`;
+    const URL = `https://gdm-todolist.herokuapp.com/api/all`;
+    //const URL = `http://localhost:3001/api/all`;
     const fetchData = async () => {
       const data = await fetch(URL);
       promiseData = await data.json();
@@ -58,7 +58,7 @@ export default function App() {
       // const response = await fetch(`http://localhost:3001/api/include`, {
       //   method: 'POST', event)
       // });
-      axios.post(`http://localhost:3001/api/include`, event).then(res => {
+      axios.post(`https://gdm-todolist.herokuapp.com/api/include`, event).then(res => {
         if (res.statusText === "Created") {
           lastFilter = currentFilter;
           setCurrentFilter(resetFilter);
@@ -68,7 +68,7 @@ export default function App() {
     }
   }
   const handleDeleteAction = async (event) => {
-    axios.delete(`http://localhost:3001/api/delete/${event}`).then(res => {
+    axios.delete(`https://gdm-todolist.herokuapp.com/api/delete/${event}`).then(res => {
       if (res.statusText === "OK") {
         lastFilter = currentFilter;
         setCurrentFilter(resetFilter);
@@ -89,7 +89,7 @@ export default function App() {
   }
   function editAction(body) {
     if (body !== null || body !== undefined) {
-      axios.put(`http://localhost:3001/api/update`, body).then(res => {
+      axios.put(`https://gdm-todolist.herokuapp.com/api/update`, body).then(res => {
         if (res.statusText == "OK") {
           lastFilter = currentFilter;
           setCurrentFilter(resetFilter);

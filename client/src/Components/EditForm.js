@@ -12,7 +12,7 @@ export default function EditFormComponent({ editClick, idEditing, updating }) {
 
   useEffect(() => {
     if (idEditing !== null && idEditing !== undefined) {
-      axios.get(`http://localhost:3001/api/find/${idEditing}`).then(res => {
+      axios.get(`https://gdm-todolist.herokuapp.com/api/find/${idEditing}`).then(res => {
         if (res.statusText === "OK") {
           const { _id, action, done, created } = res.data;
           setIdState(_id);
