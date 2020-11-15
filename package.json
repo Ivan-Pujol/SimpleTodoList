@@ -1,0 +1,25 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "App simples de ToDoList",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.X",
+    "dotenv": "8.2.X",
+    "express": "4.17.X",
+    "mongoose": "5.10.X",
+    "nodemon": "2.0.X"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/"
+    ]
+  }
+}
